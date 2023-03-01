@@ -1,0 +1,4 @@
+# tesseractr Automator Shell Script
+tfile=$(mktemp /tmp/foo.XXXXXXXXX)
+/opt/local/bin/pngpaste $tfile.png
+/opt/local/bin/tesseract -l dan $tfile.png - | grep -v -e Required -e '^[[:space:]]*$'|| iconv -t UTF-8| pbcopy
